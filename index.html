@@ -904,7 +904,7 @@
     </main>
 
     <footer>
-      Ditenagai oleh <a href="https://paster.sh" target="_blank" rel="noopener">paster.sh</a> API &mdash; PasteView
+      Ditenagai oleh <a href="https://api.paster.sh/v1/create" target="_blank" rel="noopener">paster.sh</a> API &mdash; PasteView
     </footer>
   </div>
 
@@ -913,7 +913,7 @@
        PasteView — Integrasi paster.sh API
        ============================================ */
 
-    const API_BASE = 'https://api.paster.sh/v1';
+    const API_BASE = 'https://api.paster.sh/v1/create';
     const MAX_BYTES = 512 * 1024; // 512KB
 
     // Elemen DOM
@@ -1120,7 +1120,7 @@
       resultCode.textContent = data.code;
 
       // URL
-      resultUrl.value = data.url || `https://paster.sh/${data.code}`;
+      resultUrl.value = data.url || `https://api.paster.sh/v1/create${data.code}`;
       resultRaw.value = data.raw || `${API_BASE}/raw/${data.code}`;
 
       // Tombol buka
